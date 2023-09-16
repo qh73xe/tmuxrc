@@ -32,6 +32,7 @@ $ ln ~/.config/tmux/tmux.conf ~/.tmux.conf
 <C-Space>l : 左のペインに移動
 
 <C-Space>m  : cmus (music player) を実行
+<C-Space>de : diernv の設定を開始
 <C-Space>pi : ipython を実行
 <C-Space>gs : git status を実行
 <C-Space>gc : 現在ディレクトリ以下の全ての変更を add した上で `git commit` を実施

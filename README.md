@@ -1,5 +1,4 @@
 # tmuxrc
-
 tmux の設定はちょっと複雑化しているので,
 レポジトリを分けて管理をします.
 
@@ -16,8 +15,10 @@ $ ln ~/.config/tmux/tmux.conf ~/.tmux.conf
 
 いくつかの設定は以下の外部コマンドを前提にします.
 
-- <C-Space>pi : ipython
+- <C-Space>p* : python3, ipython
 - <C-Space>g* : git, gh
+- <C-Space>e* : diernv
+- <C-Space>y* : yarn
 - <C-Space>m  : cmus
 
 ## Keybind
@@ -32,8 +33,9 @@ $ ln ~/.config/tmux/tmux.conf ~/.tmux.conf
 <C-Space>l : 左のペインに移動
 
 <C-Space>m  : cmus (music player) を実行
-<C-Space>de : diernv の設定を開始
+<C-Space>ee : diernv の設定を開始
 <C-Space>pi : ipython を実行
+<C-Space>pv : venv 環境の構築
 <C-Space>gs : git status を実行
 <C-Space>gc : 現在ディレクトリ以下の全ての変更を add した上で `git commit` を実施
 <C-Space>gr : github レポジトリをブラウザで表示
@@ -64,6 +66,14 @@ shell コマンドの実行に関しては大きく実行場所によって書�
 
 `new-window -d` のようにオプションを実施するとバックグラウンドで実行されるので便利
 
+
+### display-popup: 画面中央に POPUP を呼び出しコマンドを実行したい場合
+
+`bind <key> display-popup -E -d "#{pane_current_path}" "<some command>"` を利用する
+
+`-E` オプションはコマンドが終了したら POPUP を閉じるオプション.
+この際に現在ペインのディレクトリを引き継ぎたい場合には
+`-d "#{pane_current_path}"` オプションを不要する.
 
 ### send-keys: 現在ペインでコマンドを実行したい場合
 

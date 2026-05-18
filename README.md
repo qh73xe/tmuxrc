@@ -19,7 +19,17 @@ $ ln ~/.config/tmux/tmux.conf ~/.tmux.conf
 - <C-Space>g* : git, gh
 - <C-Space>e* : diernv
 - <C-Space>y* : yarn
+- <C-Space>a* : cursor-cli / copilot / codex / gemini を優先順に探索
 - <C-Space>m  : cmus
+
+LLM CLI が見つからない場合は `copilot` のインストールを確認し, `y` で `npm install -g @github/copilot` を実行します.
+
+クリップボード連携は OS ごとに以下を自動利用します.
+
+- macOS: pbcopy, pbpaste
+- Linux (Wayland): wl-copy, wl-paste
+- Linux (X11): xsel or xclip
+- Windows (WSL / Ubuntu): clip.exe, powershell.exe
 
 ## Keybind
 
@@ -36,6 +46,8 @@ $ ln ~/.config/tmux/tmux.conf ~/.tmux.conf
 <C-Space>ee : diernv の設定を開始
 <C-Space>pi : ipython を実行
 <C-Space>pv : venv 環境の構築
+<C-Space>ah : 現在ディレクトリで優先順の LLM CLI を右ペインに起動
+<C-Space>av : 現在ディレクトリで優先順の LLM CLI を下ペインに起動
 <C-Space>gs : git status を実行
 <C-Space>gc : 現在ディレクトリ以下の全ての変更を add した上で `git commit` を実施
 <C-Space>gr : github レポジトリをブラウザで表示
